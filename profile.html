@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+  
+  <link rel='stylesheet' href='assets/css/normalize.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+  <script src='assets/js/jquery-1.8.3.min.js'></script>
+<script src='assets/js/app.js'></script>
+  
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+  
+  <title>ChooseIPS Portal</title>
+
+</head>
+
+<body>
+
+	<header role="banner">
+		<div class="main-header">
+			<div class="container">
+			
+				<div class="app-icon">
+					<img src="assets/images/chooseIPS.PNG">
+				</div>
+			
+				<nav>
+  <ul>
+    <li><a href="#">Students</a></li>
+    <li><a href="#">Programs</a></li>
+  </ul>
+</nav>
+		    
+			    <div class="dropdown alerts-dropdown">
+				    <span class="alerts-icon"></span>
+				    <span class="alerts-badge"></span>
+			    </div>
+			
+				<div class="dropdown user-dropdown">
+					<span class="user-email"><a href="">matt.hoffman@gmail.com</a></span>
+					<span class="dropdown-toggle"></span>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="sub-header">
+			
+			<div class="container">
+	    		<nav>
+  <ul>
+    <li><a href="#">Back</a></li>
+    <li class='current'><a class='current' href="profile.html">Profile</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="communication.html">Communication</a></li>
+  </ul>
+</nav>
+		    </div>
+		    
+		</div>
+	    
+	</header>
+
+<div class="main-content">
+	
+	<div class="container">
+		
+		<div class="student-information">
+			
+			<h2 class="section-title">Student Information</h2>
+			
+			<div class="profile-card">
+				
+				<p class="first-name">Teresa</p>
+				<p class="last-name">Hoffman</p>
+				<p class="current-grade">Current Grade: 7th Grade</p>
+				<p class="street">Street: 4171 N. Delaware St.</p>
+				<p class="city">City: Indianapolis</p>
+				<p class="state">State: IN</p>
+				<p class="zip">Zip: 46204</p>
+				<p class="birthday">DOB: 10/13/04</p>
+				<p class="gender">Gender: Female</p>
+				<p class="ethnicity">Ethnicity: Not hispanic</p>
+				<p class="race">Race: White</p>
+				<p class="iep">Has IEP: No</p>
+				
+				<a href="#"><span class="btn-primary">Edit</span></a>
+			</div>
+			
+		</div>
+		
+		<div class="program-choices">
+			
+			<h2 class="section-title">Program Choices</h2>
+			
+			<ul class="program-list">
+				
+				<li class="program-card">
+			
+					<h3 class="program-title">Montessori</h3>
+					
+					<span class="program-status">
+						<div class="status-badge waitlist"></div>Waitlist
+					</span>
+					
+					<div class="program-position">
+						<span class="position-place">34</span>
+						<span>/</span>
+						<span class="position-total">68</span>
+					</div>
+					
+					<div class="program-summary">
+						<span><span class="number-filled">25</span> filled</span>
+						<span><span class="number-open">0</span> open</span>
+						<span><span class="number-waitlist">68</span> waitlist</span>
+					</div>
+					
+				</li>
+				
+				<li class="program-card">
+			
+					<h3 class="program-title">Performing Arts</h3>
+					
+					<span class="program-status">
+						<div class="status-badge waitlist"></div>Waitlist
+					</span>
+					
+					<div class="program-position">
+						<span class="position-place">34</span>
+						<span>/</span>
+						<span class="position-total">68</span>
+					</div>
+					
+					<div class="program-summary">
+						<span><span class="number-filled">25</span> filled</span>
+						<span><span class="number-open">0</span> open</span>
+						<span><span class="number-waitlist">68</span> waitlist</span>
+					</div>
+					
+				</li>
+				
+				<li class="program-card">
+			
+					<h3 class="program-title">Center For Inquiry</h3>
+					
+					<span class="program-status">
+						<div class="status-badge accepted"></div>Accepted
+					</span>
+					
+					<div class="program-position">
+						<span class="position-place">34</span>
+						<span>/</span>
+						<span class="position-total">68</span>
+					</div>
+					
+					<div class="program-summary">
+						<span><span class="number-filled">25</span> filled</span>
+						<span><span class="number-open">0</span> open</span>
+						<span><span class="number-waitlist">68</span> waitlist</span>
+					</div>
+					
+				</li>
+				
+			</ul>
+			
+		</div>
+		
+	</div>
+	
+</div>

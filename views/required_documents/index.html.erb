@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Required Documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @required_documents.each do |required_document| %>
+      <tr>
+        <td><%= link_to 'Show', required_document %></td>
+        <td><%= link_to 'Edit', edit_required_document_path(required_document) %></td>
+        <td><%= link_to 'Destroy', required_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Required document', new_required_document_path %>
